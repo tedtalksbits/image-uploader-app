@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import styled from 'styled-components';
+import Display from './Pages/Display';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import NotFoundPage from './Pages/NotFoundPage';
+import { mobileApp } from './ConstantStyles';
+import FileUpload from './Components/FileUpload';
+const MainApp = styled.main`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 2rem;
+ ${mobileApp};
+`
 
 function App() {
+  const [image, setImage] = useState([])
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <Router>
+      <MainApp className="app">
+        <Routes>
+
+          <Route path="/" exact element={<FileUpload setImage={setImage} />} />
+          <Route path="/success" element={<Display image={image} />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </MainApp>
+    </Router>
+
+
   );
 }
 

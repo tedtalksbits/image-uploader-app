@@ -1,0 +1,31 @@
+.loadingbar{
+   background: #F2F2F2;
+   height: 6px;
+   margin: 1.5rem 0;
+   position: relative;
+   border-radius: 8px;
+   overflow: hidden;
+   
+}
+.loader{
+   background: #2F80ED;
+   width: 45%;
+   position: absolute;
+   left: 0;
+   top: 0;
+   height: 100%;
+   animation: scanning 2.875s ease-in-out infinite -.3s;
+   border-radius: 8px;
+}
+
+@keyframes scanning{
+   0%{
+      left: -10%;
+   }
+   49%{
+      left: 80%;
+   }
+   100%{
+      left: -10%;
+   }
+}

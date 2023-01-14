@@ -1,0 +1,1 @@
+export const PlaceholderImg = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.dribbble.com%2Fusers%2F1013019%2Fscreenshots%2F3281397%2Ficon_nodata_dribbble.jpg&f=1&nofb=1"
